@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Ваші записи</h1>
+<ul>
+    {% for appointment in appointments %}
+        <li>{{ appointment.date }} о {{ appointment.time }} — {{ appointment.service }} з {{ appointment.staff }} ({{ appointment.get_status_display }})</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

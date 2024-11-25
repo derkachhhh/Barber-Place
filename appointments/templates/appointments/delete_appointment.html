@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Видалити запис</h1>
+<p>Ви впевнені, що хочете видалити запис для {{ appointment.client }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Так, видалити</button>
+    <a href="{% url 'appointments:appointment_list' %}">Скасувати</a>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Список записів</h1>
+<table>
+    <tr>
+        <th>Клієнт</th>
+        <th>Послуга</th>
+        <th>Працівник</th>
+        <th>Дата</th>
+        <th>Час</th>
+        <th>Статус</th>
+        <th>Дії</th>
+    </tr>
+    {% for appointment in appointments %}
+    <tr>
+        <td>{{ appointment.client }}</td>
+        <td>{{ appointment.service }}</td>
+        <td>{{ appointment.staff }}</td>
+        <td>{{ appointment.date }}</td>
+        <td>{{ appointment.time }}</td>
+        <td>{{ appointment.get_status_display }}</td>
+        <td>
+            <a href="{% url 'appointments:edit_appointment' appointment.id %}">Редагувати</a> |
+            <a href="{% url 'appointments:delete_appointment' appointment.id %}">Видалити</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
